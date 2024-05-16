@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do</title>
+</head>
+<body>
+  <section class="list-management">
+    <h2>Lists</h2>
+    <ul class="lists">
+      <li data-list-id="a0">My Day</li>
+    </ul>
+    <button class="add-list">+ New list</button>
+  </section>
+  <section class="list-content" data-list-id="">
+    <h2></h2>
+    <ul class="tasks"></ul>
+    <div class="task-input">
+      <button>+</button>
+      <input type="text" placeholder="Add a task" />
+    </div>
+  </section>
+  <section class="task-management" data-task-id="">
+    <header>
+      <input type="text" />
+      <button class="close-task-management">X</button>
+    </header>
+    <div>
+      <label for="duedate">Due date:</label>
+      <input type="date" id="duedate" />
+    </div>
+    <button>Urgent!</button>
+    <textarea placeholder="Add a description"></textarea>
+  </section>
+</body>
+</html>
