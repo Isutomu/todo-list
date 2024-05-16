@@ -6,22 +6,22 @@
   <title>To Do</title>
 </head>
 <body>
-  <section class="list-management">
+  <section id="list-sidebar">
     <h2>Lists</h2>
     <ul class="lists">
       <li data-list-id="a0">My Day</li>
     </ul>
-    <button class="add-list">+ New list</button>
+    <button id="add-list">+ New list</button>
   </section>
-  <section class="list-content" data-list-id="">
-    <h2></h2>
+  <section id="list-display" data-list-id="">
+    <h2 id="header-list-name"></h2>
     <ul class="tasks"></ul>
     <div class="task-input">
       <button>+</button>
       <input type="text" placeholder="Add a task" />
     </div>
   </section>
-  <section class="task-management" data-task-id="">
+  <section id="task-fields" data-task-id="">
     <header>
       <input type="text" />
       <button class="close-task-management">X</button>
