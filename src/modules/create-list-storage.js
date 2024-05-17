@@ -1,4 +1,4 @@
-export { createListStorage, removeListStorage };
+export { createListStorage, removeListStorage, getListName, getTasks };
 
 
 // Main function
@@ -56,4 +56,14 @@ function checkIfNameAvailable(listName, pageData) {
 function removeListStorage(listId) {
     localStorage.remove(listId);
 };
+
+function getListName(listId) {
+    const pageData = getFullLocalStorage();
+    return pageData[listId].name;
+}
+
+function getTasks(listId) {
+    const pageData = getFullLocalStorage();
+    return pageData[listId].tasks;
+}
 // ---
