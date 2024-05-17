@@ -1,4 +1,4 @@
-export { createListStorage };
+export { createListStorage, removeListStorage };
 
 
 // Main function
@@ -26,7 +26,7 @@ function generateValidName(pageData) {
 };
 
 function generateValidId(pageData) {
-    let listId = 0;
+    let listId = 1;
     while(true) {
         if(pageData[String(listId)] === undefined) {
             return String(listId);
@@ -51,5 +51,9 @@ function checkIfNameAvailable(listName, pageData) {
         Object.keys(pageData).find(
             (key) => pageData[key].name === listName) === undefined
     );
+};
+
+function removeListStorage(listId) {
+    localStorage.remove(listId);
 };
 // ---
