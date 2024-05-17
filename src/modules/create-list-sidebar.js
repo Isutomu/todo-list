@@ -1,5 +1,6 @@
 import displayList from './display-list.js';
 import deleteList from './delete-list.js';
+import updateListName from './update-list-name.js';
 
 // Main function
 export default function createListSidebar(id, name) {
@@ -22,6 +23,9 @@ function createListInput(name) {
         displayList(e.target.closest('li').dataset.id);
     });
     listName.addEventListener('dblclick', (e) => e.target.focus());
+    listName.addEventListener('change', (e) => updateListName(
+        e.target.closest('li').dataset.id, e.target.value)
+    );
 
     return listName;
 };
