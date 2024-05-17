@@ -1,4 +1,4 @@
-export { createListStorage, removeListStorage, getListName, getTasks };
+export { createListStorage, removeListStorage, getListName, getTasks, checkNameAvailability, setListNameStorage };
 
 
 // Main function
@@ -18,7 +18,7 @@ function generateValidName(pageData) {
     let listName;
     while(true) {
         listName = `Untitled(${count})`;
-        if(checkIfNameAvailable(listName, pageData)) {
+        if(checkNameAvailability(listName)) {
             return listName;
         }
         count++;
@@ -46,7 +46,8 @@ function getFullLocalStorage() {
     return pageData;
 }
 
-function checkIfNameAvailable(listName, pageData) {
+function checkNameAvailability(listName) {
+    const pageData = getFullLocalStorage();
     return (
         Object.keys(pageData).find(
             (key) => pageData[key].name === listName) === undefined
@@ -60,10 +61,16 @@ function removeListStorage(listId) {
 function getListName(listId) {
     const pageData = getFullLocalStorage();
     return pageData[listId].name;
-}
+};
 
 function getTasks(listId) {
     const pageData = getFullLocalStorage();
     return pageData[listId].tasks;
-}
+};
+
+function setListNameStorage(listId, listName) {
+    const pageData = getFullLocalStorage();
+    pageData[listId].name = listName;
+    localStorage.setItem(listId, JSON.stringify(pageData[listId]));
+};
 // ---
