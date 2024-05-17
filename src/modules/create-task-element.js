@@ -1,3 +1,7 @@
+import displayTaskOptions from "./display-task-options.js";
+import deleteTask from "./delete-task.js";
+
+
 // Main function
 export default function createTaskElement(id, name) {
     const taskElem = document.createElement('li');
@@ -14,7 +18,7 @@ function createTaskInput(name) {
     const taskName = document.createElement('span');
     taskName.textContent = name;
     taskName.addEventListener('click', (e) => {
-        showTaskOptions(e.target.closest('li').dataset.id);
+        displayTaskOptions(e.target.closest('li').dataset.id);
     });
 };
 
