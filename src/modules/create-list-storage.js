@@ -1,4 +1,4 @@
-export { createListStorage, removeListStorage, getListName, getTasks, checkNameAvailability, setListNameStorage };
+export { createListStorage, removeListStorage, getListName, getTasks, checkNameAvailability, setListNameStorage, getTaskInfo };
 
 
 // Main function
@@ -67,6 +67,11 @@ function getTasks(listId) {
     const pageData = getFullLocalStorage();
     return pageData[listId].tasks;
 };
+
+function getTaskInfo(taskId) {
+    const pageData = getFullLocalStorage();
+    return pageData[taskId.split('-')[0]].tasks[taskId];
+}
 
 function setListNameStorage(listId, listName) {
     const pageData = getFullLocalStorage();
