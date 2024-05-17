@@ -19,7 +19,7 @@ function createListInput(name) {
 
     listName.addEventListener('click', (e) => {
         e.target.preventDefault();
-        displayList(inputListTab.closest('li').dataset.id);
+        displayList(e.target.closest('li').dataset.id);
     });
     listName.addEventListener('dblclick', (e) => e.target.focus());
 
@@ -30,8 +30,8 @@ function createListButton() {
     const deleteListBtn = document.createElement('button');
     deleteListBtn.textContent = 'X';
     deleteListBtn.addEventListener('click', (e) =>
-        deleteList(inputListTab.closest('li').dataset.id
-    ));
+        deleteList(e.target.closest('li').dataset.id)
+    );
 
     return deleteListBtn;
 };
