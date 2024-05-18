@@ -8,29 +8,29 @@
 <body>
   <section id="list-sidebar">
     <h2>Lists</h2>
-    <ul class="lists">
-      <li data-list-id="a0">My Day</li>
+    <ul id="list-lists">
+      <li data-list-id="0">My Day</li>
     </ul>
-    <button id="add-list">+ New list</button>
+    <button id="add-list-button">+ New list</button>
   </section>
   <section id="list-display" data-list-id="">
     <h2 id="header-list-name"></h2>
-    <ul class="tasks"></ul>
-    <div class="task-input">
+    <ul id="tasks-list"></ul>
+    <div id="new-task-entry">
       <button>+</button>
       <input type="text" placeholder="Add a task" />
     </div>
   </section>
-  <section id="task-fields" data-task-id="">
+  <section id="task-options" data-task-id="">
     <header>
       <input type="text" />
-      <button class="close-task-management">X</button>
+      <button id="close-task-options">X</button>
     </header>
     <div>
       <label for="duedate">Due date:</label>
       <input type="date" id="duedate" />
     </div>
-    <button>Urgent!</button>
+    <button id="task-priority">Urgent!</button>
     <textarea placeholder="Add a description"></textarea>
   </section>
 </body>
