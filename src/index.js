@@ -41,7 +41,7 @@ newTaskInput.addEventListener('keyword', (e) => {
     }
 });
 
-const closeTaskOptions = document.querySelector('#close-tasks-options');
+const closeTaskOptions = document.querySelector('#close-task-options');
 closeTaskOptions.addEventListener('click', () => {
     disableModificationsTask();
 });
