@@ -8,7 +8,7 @@ export default function createTaskStorage(listId, name) {
     pageData[listId].tasks[taskId] = {
         name,
         'dueDate': '',
-        'priority': false,
+        'urgent': false,
         'description': ''
     };
     localStorage.setItem(listId, JSON.stringify(pageData[listId]));

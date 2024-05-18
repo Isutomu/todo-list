@@ -34,7 +34,7 @@ function displayTasks(listId) {
     const tasksList = document.querySelector('#tasks-list');
     tasksList.innerHTML = '';
     const tasksData = getTasks(listId);
-    for (task in tasksData) {
+    for (let task in tasksData) {
         tasksList.appendChild(createTaskElement(task, tasksData[task].name));
     }
 }

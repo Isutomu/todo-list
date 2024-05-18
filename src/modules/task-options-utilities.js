@@ -17,7 +17,8 @@ function enableModificationsTask(taskId) {
     dueDateInput.removeAttribute('disabled');
 
     const priorityButton = document.querySelector('#task-priority');
-    if(taskData.priority) {
+    priorityButton.classList.remove('task-urgent');
+    if(taskData.urgent) {
         priorityButton.classList.add('task-urgent');
     }
 

@@ -59,26 +59,27 @@ closeTaskOptions.addEventListener('click', () => {
 });
 
 const taskNameOptions = document.querySelector('#task-options header input');
-taskNameOptions.addEventListener('change', () => {
+taskNameOptions.addEventListener('change', (e) => {
     const taskId = e.target.closest('section').dataset.taskId;
     const taskName = e.target.value;
     updateTaskData(taskId, 'name', taskName);
+    document.querySelector(`#tasks-list li[data-task-id="${taskId}"] span`).textContent = taskName;
 });
 const taskDuedateOptions = document.querySelector('#duedate');
-taskDuedateOptions.addEventListener('change', () => {
+taskDuedateOptions.addEventListener('change', (e) => {
     const taskId = e.target.closest('section').dataset.taskId;
     const taskDuedate = e.target.value;
-    updateTaskData(taskId, 'duedate', taskDuedate);
+    updateTaskData(taskId, 'dueDate', taskDuedate);
 });
 const taskUrgentOptions = document.querySelector('#task-priority');
-taskUrgentOptions.addEventListener('click', () => {
+taskUrgentOptions.addEventListener('click', (e) => {
     const taskId = e.target.closest('section').dataset.taskId;
-    e.target.classList.toggle('urgent');
-    const taskUrgent = e.target.classList.contains('urgent');
+    e.target.classList.toggle('task-urgent');
+    const taskUrgent = e.target.classList.contains('task-urgent');
     updateTaskData(taskId, 'urgent', taskUrgent);
 });
 const taskDescriptionOptions = document.querySelector('#task-options textarea');
-taskDescriptionOptions.addEventListener('change', () => {
+taskDescriptionOptions.addEventListener('change', (e) => {
     const taskId = e.target.closest('section').dataset.taskId;
     const taskDescription = e.target.value;
     updateTaskData(taskId, 'description', taskDescription);
