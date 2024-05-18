@@ -15,7 +15,7 @@ export function checkNameAvailability(pageData, listName) {
 };
 
 export function removeListStorage(listId) {
-    localStorage.remove(listId);
+    localStorage.removeItem(listId);
 };
 
 export function getListName(listId) {
