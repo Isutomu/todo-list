@@ -15,17 +15,11 @@ export default function createListSidebar(id, name) {
 
 // Complementary functions
 function createListInput(name) {
-    const listName = document.createElement('input');
-    listName.value = name;
-
+    const listName = document.createElement('span');
+    listName.textContent = name;
     listName.addEventListener('click', (e) => {
-        e.target.preventDefault();
         displayList(e.target.closest('li').dataset.listId);
     });
-    listName.addEventListener('dblclick', (e) => e.target.focus());
-    listName.addEventListener('change', (e) => 
-        updateListName(e.target.closest('li').dataset.listId, e.target.value)
-    );
 
     return listName;
 };
