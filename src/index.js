@@ -1,7 +1,18 @@
 import createList from "./modules/create-list.js";
 import createTask from "./modules/create-task.js";
 import { disableModificationsTask } from "./modules/task-options-utilities.js";
-import { updateTaskData } from "./modules/create-list-storage.js";
+import { updateTaskData } from "./modules/storage-utilities.js";
+import displayList from "./modules/display-list.js";
+
+
+if(localStorage.getItem('0')) {
+    displayList('0');
+} else {
+    localStorage.setItem('0', JSON.stringify({
+        "name": 'My day',
+        "tasks":{}
+    }));
+}
 
 
 const newListBtn = document.querySelector('#add-list-button');
@@ -12,15 +23,19 @@ newListBtn.addEventListener('click', () => {
 const newTaskBtn = document.querySelector("#new-task-entry button");
 newTaskBtn.addEventListener('click', () => {
     const inputField = document.querySelector('#new-task-entry input');
-    document.querySelector('#tasks-list').appendChild(createTask(inputField.value));
-    disableModificationsTask();
-    inputField.value = '';
+    if(inputField.value!=='') {
+        const currentListId = document.querySelector('#list-display').dataset.listId;
+        document.querySelector('#tasks-list').appendChild(createTask(currentListId, inputField.value));
+        disableModificationsTask();
+        inputField.value = '';
+    }
 });
 const newTaskInput = document.querySelector("#new-task-entry input");
 newTaskInput.addEventListener('keyword', (e) => {
     if(e.key==='Enter' && e.target.value!=='') {
         const inputField = e.target;
-        document.querySelector('#tasks-list').appendChild(createTask(inputField.value));
+        const currentListId = document.querySelector('#list-display').dataset.listId;
+        document.querySelector('#tasks-list').appendChild(createTask(currentListId, inputField.value));
         disableModificationsTask();
         inputField.value = '';
     }

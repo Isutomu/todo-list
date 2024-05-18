@@ -1,10 +1,10 @@
-import { checkNameAvailability, setListNameStorage, getListName } from "./create-list-storage.js";
+import { checkNameAvailability, setListNameStorage, getListName } from "./storage-utilities.js";
 
 export default function updateListName(listId, listName) {
     if(checkNameAvailability(listName)) {
         setListNameStorage(listId, listName);
         const fullListHeader = document.querySelector('#header-list-name');
-        if(fullListHeader.closest('section').dataset.id === listId) {
+        if(fullListHeader.closest('section').dataset.listId === listId) {
             fullListHeader.textContent = listName;
         }
     } else {

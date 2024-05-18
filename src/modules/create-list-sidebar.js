@@ -16,15 +16,15 @@ export default function createListSidebar(id, name) {
 // Complementary functions
 function createListInput(name) {
     const listName = document.createElement('input');
-    listName.setAttribute('value', name);
+    listName.value = name;
 
     listName.addEventListener('click', (e) => {
         e.target.preventDefault();
-        displayList(e.target.closest('li').dataset.id);
+        displayList(e.target.closest('li').dataset.listId);
     });
     listName.addEventListener('dblclick', (e) => e.target.focus());
-    listName.addEventListener('change', (e) => updateListName(
-        e.target.closest('li').dataset.id, e.target.value)
+    listName.addEventListener('change', (e) => 
+        updateListName(e.target.closest('li').dataset.listId, e.target.value)
     );
 
     return listName;
@@ -34,7 +34,7 @@ function createListButton() {
     const deleteListBtn = document.createElement('button');
     deleteListBtn.textContent = 'X';
     deleteListBtn.addEventListener('click', (e) =>
-        deleteList(e.target.closest('li').dataset.id)
+        deleteList(e.target.closest('li').dataset.listId)
     );
 
     return deleteListBtn;

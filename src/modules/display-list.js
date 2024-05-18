@@ -1,4 +1,5 @@
-import { getListName, getTasks } from "./create-list-storage.js";
+import { getListName, getTasks } from "./storage-utilities.js";
+import createTaskElement from "./create-task-element.js";
 
 
 // Main function
@@ -14,20 +15,21 @@ export default function displayList(listId) {
 
 // Complementary functions
 function isFullListVisible(listId) {
-    const currentlyShownListId = document.querySelector('#list-display').dataset.id;
+    const currentlyShownListId = document.querySelector('#list-display').dataset.listId;
     return (listId === currentlyShownListId);
 }
 
 function updateHeaderName(listId) {
-    document.querySelector('#list-display').dataset.id = '';
-    document.querySelector('#header-list-name').value = getListName(listId);
-    document.querySelector('#list-display').dataset.id = listId;
+    document.querySelector('#header-list-name').textContent = getListName(listId);
+    document.querySelector('#list-display').dataset.listId = listId;
 }
 
 function displayTasks(listId) {
+    const tasksList = document.querySelector('#tasks-list');
+    tasksList.innerHTML = '';
     const tasksData = getTasks(listId);
-    for (task of tasksData) {
-        createTaskElement(task);
+    for (task in tasksData) {
+        tasksList.appendChild(createTaskElement(task, tasksData[task].name));
     }
 }
 // ---

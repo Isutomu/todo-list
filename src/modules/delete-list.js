@@ -1,4 +1,4 @@
-import { removeListStorage } from "./create-list-storage.js";
+import { removeListStorage } from "./storage-utilities.js";
 import displayList from './display-list.js';
 
 export default function deleteList(listId) {

@@ -1,5 +1,5 @@
-import displayTaskOptions from "./display-task-options.js";
-import deleteTask from "./delete-task.js";
+import { enableModificationsTask } from "./task-options-utilities.js";
+import { removeTaskStorage } from "./storage-utilities.js";
 
 
 // Main function
@@ -18,14 +18,16 @@ function createTaskInput(name) {
     const taskName = document.createElement('span');
     taskName.textContent = name;
     taskName.addEventListener('click', (e) => {
-        displayTaskOptions(e.target.closest('li').dataset.id);
+        enableModificationsTask(e.target.closest('li').dataset.taskId);
     });
 };
 
 function createTaskButton() {
     const taskButton = document.createElement('button');
     taskButton.addEventListener('click', (e) => {
-        deleteTask(e.target.closest('li').dataset.id);
+        const taskElement = e.target.closest('li');
+        removeTaskStorage(taskElement.dataset.taskId);
+        taskElement.remove();
     });
 };
 // ---
