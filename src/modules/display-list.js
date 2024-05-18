@@ -7,9 +7,13 @@ export default function displayList(listId) {
     if (isFullListVisible(listId)) {
         return;
     }
-
+    
     updateHeaderName(listId);
     displayTasks(listId);
+
+    if(listId === '0') {
+        document.querySelector('#header-list-name input').setAttribute('disabled', '');
+    }
 }
 // ---
 
@@ -20,7 +24,9 @@ function isFullListVisible(listId) {
 }
 
 function updateHeaderName(listId) {
-    document.querySelector('#header-list-name').textContent = getListName(listId);
+    document.querySelector('#header-list-name input').setAttribute('disabled', '');
+    document.querySelector('#header-list-name input').value = getListName(listId);
+    document.querySelector('#header-list-name input').removeAttribute('disabled');
     document.querySelector('#list-display').dataset.listId = listId;
 }
 

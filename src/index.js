@@ -3,6 +3,7 @@ import createTask from "./modules/create-task.js";
 import { disableModificationsTask } from "./modules/task-options-utilities.js";
 import { updateTaskData } from "./modules/storage-utilities.js";
 import displayList from "./modules/display-list.js";
+import updateListName from "./modules/update-list-name.js";
 
 
 if(localStorage.getItem('0')) {
@@ -13,7 +14,9 @@ if(localStorage.getItem('0')) {
         "tasks":{}
     }));
 }
-
+document.querySelector('#list-sidebar li[data-list-id="0"]').addEventListener('click', (e) => {
+    displayList('0');
+});
 
 const newListBtn = document.querySelector('#add-list-button');
 newListBtn.addEventListener('click', () => {
@@ -38,6 +41,14 @@ newTaskInput.addEventListener('keyword', (e) => {
         document.querySelector('#tasks-list').appendChild(createTask(currentListId, inputField.value));
         disableModificationsTask();
         inputField.value = '';
+    }
+});
+
+const listNameDisplay = document.querySelector('#header-list-name input');
+listNameDisplay.addEventListener('change', (e) => {
+    const listId = e.target.closest('section').dataset.listId;
+    if(listId !== '0') {
+        updateListName(listId, e.target.value)
     }
 });
 
