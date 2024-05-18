@@ -13,6 +13,7 @@ if(localStorage.getItem('0')) {
         "name": 'My day',
         "tasks":{}
     }));
+    displayList('0');
 }
 document.querySelector('#list-sidebar li[data-list-id="0"]').addEventListener('click', (e) => {
     displayList('0');
