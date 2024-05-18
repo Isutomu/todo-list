@@ -1,7 +1,7 @@
-import { updateTaskData } from "./modules/create-list-storage.js";
 import createList from "./modules/create-list.js";
 import createTask from "./modules/create-task.js";
 import { disableModificationsTask } from "./modules/task-options-utilities.js";
+import { updateTaskData } from "./modules/create-list-storage.js";
 
 
 const newListBtn = document.querySelector('#add-list-button');
