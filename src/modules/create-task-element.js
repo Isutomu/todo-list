@@ -20,6 +20,8 @@ function createTaskInput(name) {
     taskName.addEventListener('click', (e) => {
         enableModificationsTask(e.target.closest('li').dataset.taskId);
     });
+    
+    return taskName;
 };
 
 function createTaskButton() {
@@ -29,5 +31,7 @@ function createTaskButton() {
         removeTaskStorage(taskElement.dataset.taskId);
         taskElement.remove();
     });
+
+    return taskButton;
 };
 // ---

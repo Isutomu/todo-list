@@ -18,7 +18,7 @@ export default function createTaskStorage(listId, name) {
 // ---
 
 // Complementary function
-function generateValidId(pageData) {
+function generateValidId(pageData, listId) {
     const taskIds = Object.keys(pageData[listId].tasks);
     const cleanTasksId = taskIds.map((fullId) => fullId.split('-')[1]);
 

@@ -5,7 +5,7 @@ import { updateTaskData } from "./modules/storage-utilities.js";
 import displayList from "./modules/display-list.js";
 import updateListName from "./modules/update-list-name.js";
 
-
+localStorage.clear();
 if(localStorage.getItem('0')) {
     displayList('0');
 } else {
@@ -35,7 +35,7 @@ newTaskBtn.addEventListener('click', () => {
     }
 });
 const newTaskInput = document.querySelector("#new-task-entry input");
-newTaskInput.addEventListener('keyword', (e) => {
+newTaskInput.addEventListener('keydown', (e) => {
     if(e.key==='Enter' && e.target.value!=='') {
         const inputField = e.target;
         const currentListId = document.querySelector('#list-display').dataset.listId;
