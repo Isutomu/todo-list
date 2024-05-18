@@ -21,6 +21,7 @@ document.querySelector('#list-sidebar li[data-list-id="0"]').addEventListener('c
 
 const newListBtn = document.querySelector('#add-list-button');
 newListBtn.addEventListener('click', () => {
+    disableModificationsTask();
     document.querySelector('#lists-list').appendChild(createList());
 });
 
