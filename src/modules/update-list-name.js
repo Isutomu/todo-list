@@ -1,16 +1,14 @@
-import { checkNameAvailability, setListNameStorage, getListName } from "./storage-utilities.js";
+import { checkNameAvailability, setListNameStorage, getListName,getFullLocalStorage } from "./storage-utilities.js";
 
 export default function updateListName(listId, listName) {
-    if(checkNameAvailability(listName)) {
+    if(checkNameAvailability(getFullLocalStorage(), listName)) {
         setListNameStorage(listId, listName);
-        const fullListHeader = document.querySelector('#header-list-name');
-        if(fullListHeader.closest('section').dataset.listId === listId) {
-            fullListHeader.textContent = listName;
-        }
+        const listSidebarElem = document.querySelector(`#lists-list li[data-list-id="${listId}"] span`);
+        listSidebarElem.textContent = listName;
     } else {
-        const listTabInput = document.querySelector(`#list-sidebar li[data-list-id="${listId}"] input`);
+        const listTabInput = document.querySelector("#header-list-name input");
         listTabInput.setAttribute('disabled', '');
-        listTabInput.value(getListName(listId));
+        listTabInput.value = getListName(listId);
         listTabInput.removeAttribute('disabled');
     }
 };
