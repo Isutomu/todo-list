@@ -1,0 +1,61 @@
+#list-sidebar {
+  user-select: none;
+  grid-template-rows: 80px 1fr 40px;
+  background-color: rgb(255, 248, 240);
+  color: black;
+}
+
+#list-sidebar h2 {
+  font-size: 2rem;
+  align-self: center;
+}
+
+#lists-list {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: start;
+
+  display: grid;
+  grid-auto-rows: 35px;
+  gap: 5px;
+
+  justify-items: start;
+}
+
+#lists-list li {
+  width: 100%;
+  border: 1px black solid;
+  padding: 3px;
+
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-items: center;
+}
+
+#lists-list li:hover {
+  background-color: rgba(0, 0, 0, 0.137);
+}
+
+#lists-list li button {
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  font-size: 0.6rem;
+  place-self: center;
+}
+
+#add-list-button {
+  border-radius: 5px;
+  border: none;
+  font-size: 1.05rem;
+  width: 100%;
+}
+
+#add-list-button:hover {
+  background-color: rgba(0, 0, 0, 0.137);
+  color: purple;
+}
+
+#add-list-button:active {
+  background-color: rgb(0, 0, 0);
+}
