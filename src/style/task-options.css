@@ -51,6 +51,10 @@
   border: 1px solid black;
 }
 
+#task-options input:focus {
+  outline: none;
+}
+
 #task-options button {
   font-size: 1.5rem;
 }

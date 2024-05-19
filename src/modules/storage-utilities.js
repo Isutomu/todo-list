@@ -64,4 +64,3 @@ export function setListNameStorage(listId, listName) {
 export function extractListId(taskId) {
     return taskId.split('-')[0];
 }
-// ---

@@ -4,6 +4,8 @@ import { disableModificationsTask } from "./modules/task-options-utilities.js";
 import { updateTaskData } from "./modules/storage-utilities.js";
 import displayList from "./modules/display-list.js";
 import updateListName from "./modules/update-list-name.js";
+import initializeListsSidebar from "./modules/initialize-lists-sidebar.js";
+
 
 import './style/reset.css';
 import './style/common.css'
@@ -11,10 +13,10 @@ import './style/list-sidebar.css';
 import './style/list-display.css';
 import './style/task-options.css';
 
-document.querySelector('#task-options').style.display = "none";
-localStorage.clear();
+disableModificationsTask();
 if(localStorage.getItem('0')) {
     displayList('0');
+    initializeListsSidebar();
 } else {
     localStorage.setItem('0', JSON.stringify({
         "name": 'My day',
