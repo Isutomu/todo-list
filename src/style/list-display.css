@@ -22,7 +22,6 @@
 
 #tasks-list{
   width: 100%;
-  overflow: scroll;
   display: grid;
   grid-auto-rows: 40px;
   grid-template-columns: 1fr;
