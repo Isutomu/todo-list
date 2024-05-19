@@ -1,0 +1,69 @@
+#task-options {
+  width: 100%;
+  background-color: white;
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-content: start;
+}
+
+#task-options header {
+  border: 1px solid black;
+
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  grid-template-rows: 50px;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+#task-options header input {
+  width: 100%;
+  border: none;
+  padding-left: 10px;
+}
+
+#task-options header button {
+  height: 30px;
+  width: 30px;
+  place-self: center;
+  background-color: white;
+  border: none;
+  font-size: auto;
+  margin-top: -5px;
+  font-weight: bold;
+}
+
+#task-options div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 1.1rem;
+  align-items: center;
+  gap: 10px;
+}
+
+#task-options label {
+  font-weight: bold;
+}
+
+#task-options input {
+  border: 1px solid black;
+}
+
+#task-options button {
+  font-size: 1.5rem;
+}
+
+.task-urgent {
+  border: 3px solid red;
+  background-color: rgb(0, 0, 0);
+  color: purple;
+  font-weight: bold;
+}
+
+#task-options textarea {
+  height: 250px;
+  font-size: 1.2rem;
+  resize: vertical;
+}

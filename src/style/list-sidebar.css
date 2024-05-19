@@ -1,5 +1,9 @@
 #list-sidebar {
   user-select: none;
+  
+  display: grid;
+  justify-items: start;
+  grid-template-columns: 1fr;
   grid-template-rows: 80px 1fr 40px;
   background-color: rgb(255, 248, 240);
   color: black;
@@ -49,13 +53,4 @@
   border: none;
   font-size: 1.05rem;
   width: 100%;
-}
-
-#add-list-button:hover {
-  background-color: rgba(0, 0, 0, 0.137);
-  color: purple;
-}
-
-#add-list-button:active {
-  background-color: rgb(0, 0, 0);
 }

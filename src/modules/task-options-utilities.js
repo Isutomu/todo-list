@@ -4,7 +4,7 @@ export { enableModificationsTask, disableModificationsTask };
 
 
 function enableModificationsTask(taskId) {
-    document.querySelector('#task-options').setAttribute('display', 'grid');
+    document.querySelector('#task-options').style.display = "grid";
     document.querySelector('#task-options').setAttribute('data-task-id', taskId);
     const taskData = getTaskData(taskId);
 
@@ -28,7 +28,7 @@ function enableModificationsTask(taskId) {
 };
 
 function disableModificationsTask() {
-    document.querySelector('#task-options').setAttribute('display', 'none');
+    document.querySelector('#task-options').style.display = "none";
     document.querySelector('#task-options header input').setAttribute('disabled', '');
     document.querySelector('#duedate').setAttribute('disabled', '');
     document.querySelector('#task-priority').classList.remove('task-urgent');
