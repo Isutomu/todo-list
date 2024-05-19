@@ -1,3 +1,9 @@
+import './style/reset.css';
+import './style/common.css'
+import './style/list-sidebar.css';
+import './style/list-display.css';
+import './style/task-options.css';
+
 import createList from "./modules/create-list.js";
 import createTask from "./modules/create-task.js";
 import { disableModificationsTask } from "./modules/task-options-utilities.js";
@@ -6,12 +12,6 @@ import displayList from "./modules/display-list.js";
 import updateListName from "./modules/update-list-name.js";
 import initializeListsSidebar from "./modules/initialize-lists-sidebar.js";
 
-
-import './style/reset.css';
-import './style/common.css'
-import './style/list-sidebar.css';
-import './style/list-display.css';
-import './style/task-options.css';
 
 disableModificationsTask();
 if(localStorage.getItem('0')) {
